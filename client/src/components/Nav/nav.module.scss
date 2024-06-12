@@ -1,0 +1,57 @@
+/* src/Navbar.css */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  .navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar-item {
+    position: relative;
+  }
+  
+  .navbar-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar-item a:hover {
+    background-color: #575757;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-item {
+    text-align: left;
+  }
+  
+  .dropdown-item a {
+    padding: 12px 16px;
+    color: white;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-item a:hover {
+    background-color: #575757;
+  }
+  
