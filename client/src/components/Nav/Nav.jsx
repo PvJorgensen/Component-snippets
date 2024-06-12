@@ -1,23 +1,35 @@
-import React from 'react'
-import './nav.module.scss'
+import React, { useEffect, useState } from 'react';
+import styles from './nav.module.scss';
+import { Spinner } from '../Spinner/Spinner';
 
 export const Nav = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
-    <div className="dropdown">
-      <button onClick={toggleDropdown} className="dropdown-toggle">
-        Menu
-      </button>
-      {isOpen && (
-        <ul className="dropdown-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      {loading ? (
+        <div className={styles.loaderContainer}>
+          <Spinner />
+        </div>
+      ) : (
+        <nav>
+          <h3>Exams Preparations</h3>
+          <ul>
+            <li>Overview</li>
+            <li>Components</li>
+            <li>Data Services</li>
+          </ul>
+        </nav>
       )}
-    </div>
     </>
-  )
-}
+  );
+};

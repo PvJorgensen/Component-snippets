@@ -1,14 +1,13 @@
-import { Route, Routes } from "react-router-dom"
-import { LandingPage } from '../../Pages/LandingPage/LandingPage'
-import { TestPage } from '../../Pages/TestComponent/TestPage'
+import React from 'react';
+import {Router, Routes, Route } from 'react-router-dom';
+import { LandingPage } from '../../Pages/LandingPage/LoginPage';
+import { IndexPage } from '../../Pages/TestComponent/IndexPage';
 
 export const AppRouter = () => {
   return (
-    <Routes>
-    <Route index element={<LandingPage />}/>
-    <Route path="/TestComp" element={<TestPage />}>
-    </Route>
-        {/* <Route path="*" element={<PageNotFound></PageNotFound>}></Route> */}
-    </Routes>
-  )
-}
+      <Routes>
+        <Route index element={<LandingPage />} />
+        <Route path="index" element={<IndexPage />} />
+      </Routes>
+  );
+};
