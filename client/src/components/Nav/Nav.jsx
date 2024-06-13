@@ -19,14 +19,27 @@ export const Nav = () => {
       {loading ? (
         <div className={styles.loaderContainer}>
           <Spinner />
+          
         </div>
       ) : (
         <nav>
           <h3>Exams Preparations</h3>
-          <ul>
+          <ul className={styles.navTags}>
             <li>Overview</li>
-            <li>Components</li>
-            <li>Data Services</li>
+            <li>Components
+            <ul className={styles.hoverMenu}>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+              </ul>
+            </li>
+            <li>Data Services
+            <ul className={styles.hoverMenu}>
+                <li>test</li>
+                <li>test</li>
+                <li>test</li>
+              </ul>
+            </li>
           </ul>
         </nav>
       )}

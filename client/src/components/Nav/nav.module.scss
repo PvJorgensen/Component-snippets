@@ -1,14 +1,39 @@
 nav {
-  width: 10%;
-  height: 100vh;
-  border-right: 1px solid black;
+  display: flex;
+  width: 100%;
+  // border-bottom: 1px solid black;
+  align-items: center;
+  background-color: lightgray;
+  z-index: 9999;
+  .navTags {
+    display: flex;
+    align-items: center;
+    > li {
+      list-style: none;
+      margin-left: 15px;
+      // border: 1px solid black;
+      padding: 10px;
+    }
+  }
+  .hoverMenu {
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+  }
+  li:hover .hoverMenu {
+    display: block;
+    background-color: lightgray;
+    padding: 10px;
+    width: 3.5vw;
+    list-style: none;
+    text-decoration: underline;
+    animation: opener 0.5s ease-in-out;
+    z-index: -1;
+  }
   h3 {
     margin-left: 15px;
   }
-  li {
-    list-style: none;
-    margin-left: 15px;
-  }
+
 }
 
 /* nav.module.scss */
@@ -18,4 +43,15 @@ nav {
   justify-content: center;
   align-items: center;
   height: 200px; /* Adjust height as needed */
+}
+
+
+@keyframes opener {
+  0% {
+    margin-top: -110px;
+  }
+  100% {
+    margin-top: 20px;
+  }
+
 }
