@@ -28,11 +28,11 @@ export const Login = () => {
       console.log("logged in", data)
       sessionStorage.setItem("supabase.auth.tokes", JSON.stringify(data))
       setLoginData(data)
-      navigate("index")
+      window.location.href = 'index';
     }
   }
 
-  const handleLogout = async () => {
+   const handleLogout = async () => {
     try {
       const { error } = await supabase.auth.signOut()
       setLoginData("")
@@ -71,8 +71,6 @@ export const Login = () => {
         </form>
       ) : (
         <>
-          <p>Du er logget ind som {loginData.user.email}</p>
-          <button onClick={handleLogout}>Log af</button>
         </>
       )}
     </>

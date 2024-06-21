@@ -6,7 +6,7 @@ import { IndexPage } from '../../Pages/TestComponent/IndexPage';
 export const AppRouter = () => {
   return (
       <Routes>
-        <Route index element={<LandingPage />} />
+        <Route path="login" index element={<LandingPage />} />
         <Route path="index" element={<IndexPage />} />
       </Routes>
   );
