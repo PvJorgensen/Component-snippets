@@ -34,10 +34,14 @@ export const Nav = () => {
       sessionStorage.removeItem("supabase.auth.token");
       console.log('Logged out successfully');
       if (error) throw error;
-      window.location.href = 'Login';
+      window.location.href = '/';
     } catch (error) {
       console.error("Error logging out:", error.message);
     }
+  }
+
+  const overviewPage = () => {
+    window.location.href = 'index';
   }
   
 
@@ -58,13 +62,14 @@ export const Nav = () => {
           
         </div>
       ) : (
-        <nav>
+        <nav className={styles.navBar}>
           <h3>Exams Preparations</h3>
           <ul className={styles.navTags}>
-            <li>Overview</li>
+            <li onClick={overviewPage}>Overview</li>
             <li onClick={handleComponentClick}>Components
             {isComponentOpen &&
-            <ul className={styles.hoverMenu}>
+              <ul className={styles.hoverMenu}>
+                <li>ComponentName</li>
                 <li>ComponentName</li>
                 <li>ComponentName</li>
                 <li>ComponentName</li>

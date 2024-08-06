@@ -1,41 +1,51 @@
-nav {
+.navBar {
   display: flex;
   width: 100%;
-  // background-color: lightgray;
-  border-bottom: 1px solid lightgray;
-  box-shadow: 1px 5px 10px lightgray;
-  z-index: 9999;
+  background-color: #18181A;
+  // border-bottom: 1px solid lightgray;
+  box-shadow: 1px 5px 10px #18181A;
   align-items: center;
+  padding: 10px;
+  z-index: 9999;
+
   .navTags {
     display: flex;
     padding: 20px;
     margin: 0;
+
     > li {
       list-style: none;
       margin-left: 60px;
       cursor: pointer;
+      color: white;
     }
   }
+
   .hoverMenu {
     display: block;
     position: absolute;
     padding: 10px;
     width: 3.5vw;
     list-style: none;
-    text-decoration: underline;
-    animation: opener 0.5s ease-in;
-    margin-top: 20px;
-    background-color: white;
+    animation: opener 0.5s ease-in-out;
+    margin-top: 30px;
+    background-color: #18181A;
     width: 120px;
     margin-left: -30px;
     border-radius: 0px 0px 15px 15px;
-    border: 1px solid lightgray;
+    color: black;
+    z-index: -1;
+    text-align: center;
+    color: white;
+    li {
+      margin-bottom: 10px;
+    }
   }
 
   h3 {
     text-align: center;
+    color: white;
   }
-
 }
 
 /* nav.module.scss */
@@ -47,11 +57,10 @@ nav {
   height: 200px;
 }
 
-
 @keyframes opener {
   0% {
     transform: translateY(-100px);
-    opacity: 0;
+    opacity : 0;
   }
   100% {
     transform: translateY(0px);
